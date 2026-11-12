@@ -263,7 +263,8 @@ header {
 ============================== */
 .hero {
     padding: 130px 0 60px;
-    background: radial-gradient(circle at top center, #11382a, var(--bg-main));
+    background: linear-gradient(rgba(7, 25, 18, 0.65), rgba(7, 25, 18, 0.75)),
+            url("imge/Luxury\ Architecture\ Construction\ Banner.png") center center / cover no-repeat;
     color: #ffffff;
     text-align: center;
     position: relative;
@@ -322,6 +323,9 @@ header {
     .hero {
         padding: 100px 0 45px;
     }
+    .hero-content {
+    transform: translateY(70px);
+}
 }
 
 /* ==============================
@@ -330,7 +334,7 @@ header {
 .search-box-wrapper {
     background-image: 
         linear-gradient(rgba(7, 25, 18, 0.58), rgba(7, 25, 18, 0.68)),
-        url('imge/search-bg.jpg');
+        url('');
     background-size: cover;
     background-position: center 60%;
     background-repeat: no-repeat;
@@ -341,13 +345,21 @@ header {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg), 0 0 25px rgba(212, 175, 55, 0.08);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 12px;
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 950px;
+    margin: 30px auto 0;
     width: 100%;
     position: relative;
     overflow: hidden;
+    .search-box-wrapper .search-input-group {
+    flex: 1;
+    min-width: 0;
+}
+
+.search-box-wrapper .search-btn {
+    flex: 0 0 auto;
+}
 }
 
 .search-input-group {
@@ -547,7 +559,7 @@ section {
 }
 
 .category-icon {
-    width: 44px;
+    width: 65px;
     height: 44px;
     min-width: 44px;
     background: rgba(212, 175, 55, 0.1);
@@ -558,10 +570,20 @@ section {
     justify-content: center;
     color: var(--accent-gold);
     font-size: 18px;
-    margin-right: auto;
     margin-left: 12px;
+    margin-right: auto;
     transition: all 0.3s ease;
 }
+
+.category-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: content;
+    display: block;
+    padding: 1px;
+
+}
+
 
 .category-card:hover .category-icon {
     background: rgba(212, 175, 55, 0.2);
@@ -1040,7 +1062,7 @@ footer {
     gap: 12px;
 }
 
-.engineer-avatar {
+ .engineer-avatar{
     width: 54px;
     height: 54px;
     min-width: 54px;
@@ -1054,6 +1076,18 @@ footer {
     font-size: 18px;
     font-weight: 800;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.engineer-avatar {
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.engineer-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
 }
 
 .engineer-bio {
@@ -1374,3 +1408,408 @@ footer {
     justify-content: center;
     gap: 6px;
 }
+.logo-img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+@media (max-width: 768px) {
+    .hero {
+        background-position: left center;
+        background-size: auto 100%;
+        min-height: 650px;
+        padding: 90px 15px 40px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .search-box-wrapper {
+        flex-direction: row;
+        gap: 5px;
+        padding: 8px;
+        border-radius: 15px;
+    }
+
+    .search-box-wrapper .search-input-group {
+        flex: 1;
+        min-width: 0;
+        padding: 8px 5px;
+    }
+
+    .search-box-wrapper input,
+    .search-box-wrapper select {
+        width: 100%;
+        min-width: 0;
+        font-size: 11px;
+    }
+
+    .search-box-wrapper .search-btn {
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .search-box-wrapper .search-btn span {
+        display: none;
+    }
+    .search-box-wrapper {
+    margin-top: 100px;
+}
+}
+/* Theme Toggle دارك والوايت*/
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--accent-gold);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--accent-gold);
+    color: #071912;
+    transform: rotate(20deg);
+}
+/* تجميع زرار الوضع والقائمة بجانب بعض */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* ترتيب الأزرار في الموبايل */
+@media (max-width: 768px) {
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .theme-toggle,
+    .mobile-menu-btn {
+        flex-shrink: 0;
+    }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    left: auto;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    text-decoration: none;
+    box-shadow: 0 5px 18px rgba(37, 211, 102, 0.35);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    animation: whatsappPulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background: #128C7E;
+    color: #fff;
+}
+
+@keyframes whatsappPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+}
+
+
+
+/* ===== Join Community Section ===== */
+
+.join-community {
+    padding: 65px 20px;
+    background: var(--bg-main);
+}
+
+.join-community-card {
+    position: relative;
+    max-width: 850px;
+    margin: auto;
+    padding: 45px 35px;
+    text-align: center;
+    background: linear-gradient(145deg, #0f2e21, #071912);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: 26px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.join-community-card::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    background: rgba(212, 175, 55, 0.07);
+    border-radius: 50%;
+    top: -120px;
+    right: -70px;
+}
+
+.join-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 175, 55, 0.13);
+    color: var(--accent-gold);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 18px;
+    font-size: 28px;
+}
+
+.join-label {
+    display: inline-block;
+    color: var(--accent-gold);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.join-community-card h2 {
+    color: #fff;
+    font-size: clamp(23px, 4vw, 32px);
+    font-weight: 800;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.join-community-card h2 span {
+    display: block;
+    color: var(--accent-gold);
+}
+
+.join-community-card p {
+    max-width: 620px;
+    margin: 0 auto 28px;
+    color: #bdc9c1;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.join-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 30px;
+    background: var(--accent-gold);
+    color: #071912;
+    border-radius: 13px;
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(212, 175, 55, 0.2);
+    transition: all 0.3s ease;
+}
+
+.join-whatsapp-btn i {
+    font-size: 22px;
+}
+
+.join-whatsapp-btn:hover {
+    background: #e8c653;
+    color: #071912;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(212, 175, 55, 0.3);
+}
+
+.join-note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin-top: 22px;
+    color: #bdc9c1;
+    font-size: 12px;
+}
+
+.join-note i {
+    color: #25d366;
+}
+
+@media (max-width: 576px) {
+    .join-community {
+        padding: 40px 16px;
+    }
+
+    .join-community-card {
+        padding: 35px 20px;
+        border-radius: 22px;
+    }
+
+    .join-community-card p {
+        font-size: 13px;
+    }
+
+    .join-whatsapp-btn {
+        width: 100%;
+        padding: 14px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Join Section - Improved Size */
+
+.join-community {
+    padding: 45px 18px;
+}
+
+.join-community-card {
+    width: 100%;
+    max-width: 720px;
+    box-sizing: border-box;
+    padding: 35px 30px;
+    margin: auto;
+    border-radius: 24px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+
+    .join-community {
+        padding: 30px 15px;
+    }
+
+    .join-community-card {
+        width: 100%;
+        padding: 28px 18px;
+        border-radius: 20px;
+    }
+
+    .join-icon {
+        width: 54px;
+        height: 54px;
+        font-size: 23px;
+        margin-bottom: 14px;
+    }
+
+    .join-community-card h2 {
+        font-size: 23px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .join-community-card p {
+        font-size: 13px;
+        line-height: 1.9;
+        margin-bottom: 22px;
+    }
+
+    .join-whatsapp-btn {
+        width: 100%;
+        max-width: 290px;
+        box-sizing: border-box;
+        padding: 13px 12px;
+        font-size: 14px;
+    }
+
+    .join-note {
+        margin-top: 17px;
+    }
+}
+
+/* Join Section - Improved Size */
+
+.join-community {
+    padding: 45px 18px;
+}
+
+.join-community-card {
+    width: 100%;
+    max-width: 720px;
+    box-sizing: border-box;
+    padding: 35px 30px;
+    margin: auto;
+    border-radius: 24px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+
+    .join-community {
+        padding: 30px 15px;
+    }
+
+    .join-community-card {
+    width: 100%;
+    max-width: 340px;
+    padding: 22px 15px;
+    border-radius: 18px;
+}
+    }
+
+    .join-icon {
+        width: 54px;
+        height: 54px;
+        font-size: 23px;
+        margin-bottom: 14px;
+    }
+
+    .join-community-card h2 {
+        font-size: 20px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .join-community-card p {
+        font-size: 13px;
+        line-height: 1.9;
+        margin-bottom: 22px;
+    }
+
+    .join-whatsapp-btn {
+        width: 100%;
+        max-width: 290px;
+        box-sizing: border-box;
+        padding: 13px 12px;
+        font-size: 14px;
+    }
+
+    .join-note {
+        margin-top: 17px;
+    }
+
