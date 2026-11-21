@@ -559,9 +559,9 @@ section {
 }
 
 .category-icon {
-    width: 65px;
-    height: 44px;
-    min-width: 44px;
+    width: 90px;
+    height: 65px;
+    min-width: 90px;
     background: rgba(212, 175, 55, 0.1);
     border: 1px solid rgba(212, 175, 55, 0.15);
     border-radius: 12px;
@@ -569,6 +569,8 @@ section {
     align-items: center;
     justify-content: center;
     color: var(--accent-gold);
+    overflow: hidden;
+    flex-shrink: 0;
     font-size: 18px;
     margin-left: 12px;
     margin-right: auto;
@@ -581,6 +583,7 @@ section {
     object-fit: content;
     display: block;
     padding: 1px;
+    border-radius: 10px;
 
 }
 
