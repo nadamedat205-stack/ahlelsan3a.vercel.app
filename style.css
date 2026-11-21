@@ -496,6 +496,10 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+    min-width: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    
 }
 
 @media (max-width: 992px) {
@@ -525,6 +529,9 @@ section {
     -webkit-user-select: none;
     touch-action: manipulation;
     text-decoration: none;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .category-card:hover {
